@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+
+const App = () => {
+
+    const [gold,setGold] = useState(0);
+    const [silver,setSilver] = useState(0);
+    const [platinum,setPlatinum] = useState(0);
+
+    
+    function increaseGold(){
+        setGold(gold+1);
+    }
+    function increaseSilver(){
+        setSilver(silver+1)
+    }
+    function increasePlatinum(){
+        setPlatinum(platinum+1);
+    }
+
+
+    return (
+      <div>
+        <h1>
+          gold:{gold} silver:{silver} platinum:{platinum}
+        </h1>
+       
+       <button onClick={increaseGold}>IncreaseGold</button>
+       <button onClick={increaseSilver}>IncreaseSilver</button>
+       <button onClick={increasePlatinum}>IncreasePlatinum</button>
+       
+      </div>
+    );
 }
 
 export default App;
